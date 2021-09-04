@@ -191,10 +191,10 @@
     return now.getFullYear() - birth.getFullYear() - beforeBirth;
 }
 
-function getAge(birthDate) {
+function getAge(BeginDate, EndDate) {
   let daysInMonth = 30.436875; // Days in a month on average.
-  let dob = new Date(birthDate);
-  let aad = new Date();
+  let dob = new Date(BeginDate);
+  let aad =  EndDate ==="" ? new Date() : new Date(EndDate);
   let yearAad = aad.getFullYear();
   let yearDob = dob.getFullYear();
   let years = yearAad - yearDob; // Get age in years.
@@ -213,8 +213,21 @@ function getAge(birthDate) {
   return {years: years, months: months, days: days};
 }
 
-debugger
-let DateOfBirth= getAge('05/07/1995') ;
+
+let DateOfBirth= getAge('07/05/1995',"") ;
 document.getElementById("MyBirthYear").innerHTML = " "+ DateOfBirth.years +" Year " +DateOfBirth.months +" Month " +DateOfBirth.days +" Days." ;
-debugger
+
+let sUrmeeJobYearOfExperience= getAge('09/15/2019',new Date()) ;
+document.getElementById("UrmeeJobYearOfExperience").innerHTML = " ("+ sUrmeeJobYearOfExperience.years +" Year " +sUrmeeJobYearOfExperience.months +" Month " +sUrmeeJobYearOfExperience.days +" Days.)" ;
+
+let sInfocratJobYearOfExperience= getAge('03/01/2019','05/01/2019') ;
+document.getElementById("InfocratJobYearOfExperience").innerHTML = " ("+ (sInfocratJobYearOfExperience.years > 0 ? sInfocratJobYearOfExperience.years +" Year ": "") 
++ (sInfocratJobYearOfExperience.months >0 ? sInfocratJobYearOfExperience.months +" Month ": "") 
++(sInfocratJobYearOfExperience.days>0? sInfocratJobYearOfExperience.days +" Days.":"") +")" ;
+
+let sTeachingJobYearOfExperience= getAge('03/01/2019','05/01/2019') ;
+document.getElementById("TeachingJobYearOfExperience").innerHTML = " ("+ (sTeachingJobYearOfExperience.years > 0 ? sTeachingJobYearOfExperience.years +" Year ": "") 
++ (sTeachingJobYearOfExperience.months >0 ? sTeachingJobYearOfExperience.months +" Month ": "") 
++(sTeachingJobYearOfExperience.days>0? sTeachingJobYearOfExperience.days +" Days.":"") +")" ;
+
 })(jQuery);

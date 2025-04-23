@@ -217,7 +217,14 @@ function getAge(BeginDate, EndDate) {
 let DateOfBirth= getAge('07/05/1995',"") ;
 document.getElementById("MyBirthYear").innerHTML = " "+ DateOfBirth.years +" Year " +DateOfBirth.months +" Month " +DateOfBirth.days +" Days." ;
 
-let sUrmeeJobYearOfExperience= getAge('09/15/2019',new Date()) ;
+let sVenturaJobYearOfExperience= getAge('06/24/2024',new Date()) ;
+document.getElementById("VenturaJobYearOfExperience").innerHTML = " ("+ sVenturaJobYearOfExperience.years +" Year " +sVenturaJobYearOfExperience.months +" Month " +sVenturaJobYearOfExperience.days +" Days.)" ;
+
+let sEpyllionJobYearOfExperience= getAge('04/21/2022','06/24/2024') ;
+document.getElementById("EpyllionJobYearOfExperience").innerHTML = " ("+ sEpyllionJobYearOfExperience.years +" Year " +sEpyllionJobYearOfExperience.months +" Month " +sEpyllionJobYearOfExperience.days +" Days.)" ;
+
+
+let sUrmeeJobYearOfExperience= getAge('09/15/2019','04/20/2022') ;
 document.getElementById("UrmeeJobYearOfExperience").innerHTML = " ("+ sUrmeeJobYearOfExperience.years +" Year " +sUrmeeJobYearOfExperience.months +" Month " +sUrmeeJobYearOfExperience.days +" Days.)" ;
 
 let sInfocratJobYearOfExperience= getAge('03/01/2019','05/01/2019') ;
